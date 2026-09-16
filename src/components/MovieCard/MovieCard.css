@@ -1,0 +1,117 @@
+.movie-card {
+  flex: 0 0 auto;
+  width: 168px;
+  scroll-snap-align: start;
+}
+
+.movie-card__link {
+  display: block;
+}
+
+.movie-card__poster-wrap {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 2 / 3;
+  background: var(--color-surface);
+  margin-bottom: 10px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.movie-card__poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover .movie-card__poster,
+.movie-card.is-active .movie-card__poster {
+  transform: scale(1.06);
+}
+
+.movie-card__poster-wrap:active .movie-card__poster {
+  transform: scale(1.02);
+}
+
+.movie-card__rating {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(10, 10, 15, 0.75);
+  backdrop-filter: blur(4px);
+  color: var(--color-gold);
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 3px 7px;
+  border-radius: 5px;
+}
+
+.movie-card__hover-actions {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 10, 15, 0.35);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.movie-card:hover .movie-card__hover-actions,
+.movie-card.is-active .movie-card__hover-actions {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.movie-card__play {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  transition: transform 0.12s ease, background 0.15s ease;
+}
+
+.movie-card__play:hover {
+  background: var(--color-accent-hover);
+}
+
+.movie-card__play:active {
+  transform: scale(0.92);
+}
+
+.movie-card__title {
+  font-size: 14.5px;
+  font-weight: 600;
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-card__meta {
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 640px) {
+  .movie-card {
+    width: 132px;
+  }
+}
+
+@media (max-width: 380px) {
+  .movie-card {
+    width: 116px;
+  }
+  .movie-card__title {
+    font-size: 13px;
+  }
+}
