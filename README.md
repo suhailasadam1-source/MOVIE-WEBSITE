@@ -1,0 +1,36 @@
+# CINEMAX — Movie Streaming Landing Page
+
+A pixel-close React + Vite recreation of the provided Stitch design: a dark-themed
+movie streaming homepage with a hero banner, trending/popular carousels, genre grid,
+trailer banner, movie detail + cast section, newsletter, and footer.
+
+## Run it
+
+```bash
+npm install
+npm run dev
+```
+
+Then open the local URL Vite prints (usually http://localhost:5173).
+
+To build for production:
+
+```bash
+npm run build
+npm run preview
+```
+
+No extra packages beyond what's in `package.json` are required.
+
+## Notes
+
+- All movie posters, avatars and backdrops are placeholder images from
+  `picsum.photos`, seeded so they resolve consistently. Swap the `poster`,
+  `avatar` and `backdrop` fields in `src/data/movies.js` for real assets or
+  wire that file up to a real API (e.g. TMDB) — every component already reads
+  from this single data layer.
+- The email input in `Newsletter.jsx` and the "Watch Trailer" / "Start
+  Streaming Now" buttons are wired with local state / mock handlers only —
+  connect them to your backend where indicated by the `// TODO` comment.
+- Layout is responsive down to small mobile widths (tested breakpoints at
+  900px, 760px, 640px, 560px and 480px).
